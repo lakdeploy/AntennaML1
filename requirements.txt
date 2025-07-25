@@ -1,0 +1,14 @@
+openpyxl  
+scipy
+gradio
+streamlit
+pandas
+numpy
+joblib
+scikit-learn
+matplotlib
+pyvista
+stpyvista
+streamlit-lottie
+torch
+torchvision
