@@ -73,8 +73,9 @@ elif tab == "Inverse Design":
 elif tab == "Visualize":
     st.header("🧩 3D Antenna Model")
     try:
-    show_3d_model("assets/antenna.obj", height=400)
-except Exception as e:
-    st.warning("⚠️ 3D rendering is not supported in cloud environment.")
-    st.image("assets/3d_placeholder.png", caption="3D view not available in cloud")
+        show_3d_model("assets/antenna.obj", height=400)
+    except Exception as e:
+        st.warning("⚠️ 3D rendering is not supported in cloud environment.")
+        st.image("assets/3d_placeholder.png", caption="3D view not available in cloud")
+
 
