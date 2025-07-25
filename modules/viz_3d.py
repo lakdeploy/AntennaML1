@@ -1,23 +1,27 @@
+# modules/viz_3d.py
+
 import pyvista as pv
 import streamlit as st
 import os
 
-def show_3d_model(obj_path: str, height=400):
+def show_3d_model(path, height=400):
+    if not os.path.exists(path):
+        st.error(f"File not found: {path}")
+        return
+
     try:
-        if not os.path.exists(obj_path):
-            st.error(f"File not found: {obj_path}")
-            return
+        # Use offscreen rendering to avoid X11/libXrender issues
+        pv.set_jupyter_backend('none')
+        pv.OFF_SCREEN = True
 
-        # Load the mesh
-        mesh = pv.read(obj_path)  # Automatically detects .obj, .stl, etc.
-
-        # Create plotter
-        plotter = pv.Plotter(off_screen=True)
+        mesh = pv.read(path)
+        plotter = pv.Plotter(off_screen=True, window_size=[400, 400])
         plotter.add_mesh(mesh, color="lightblue", show_edges=True)
+        plotter.set_background("white")
 
-        # Export to HTML and display in iframe
-        html_path = "temp_3d.html"
-        plotter.export_html(html_path, backend='pythreejs')
+        html_path = "assets/plot.html"
+        plotter.export_html(html_path, backend='none', offline=True)
+
         with open(html_path, "r") as f:
             html_content = f.read()
 
