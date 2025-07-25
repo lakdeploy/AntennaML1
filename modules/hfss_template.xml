@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HFSSDesign>
+    <Parameters>
+        <!-- Example -->
+        <Parameter name="antenna_array_size" value="64" unit="mm" />
+        <Parameter name="carrier_frequency" value="28" unit="GHz" />
+    </Parameters>
+</HFSSDesign>
