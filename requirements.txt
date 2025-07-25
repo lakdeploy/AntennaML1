@@ -12,3 +12,4 @@ stpyvista
 streamlit-lottie
 torch
 torchvision
+trimesh
