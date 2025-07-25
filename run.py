@@ -29,10 +29,10 @@ if tab == "Home":
     st.title("📡 6G AI-Powered Antenna Design")
     st.markdown("""
     This application allows:
-    - 📈 Predicting Spectral Efficiency
-    - 🎯 Inverse Design using GAN
-    - 🧠 HFSS-compatible XML Export
-    - 🧩 Real-time 3D Visualization
+    - 📈 Predicting Spectral Efficiency  
+    - 🎯 Inverse Design using GAN  
+    - 🧠 HFSS-compatible XML Export  
+    - 🧩 Real-time 3D Visualization  
     """)
 
 # Prediction tab
@@ -77,5 +77,3 @@ elif tab == "Visualize":
     except Exception as e:
         st.warning("⚠️ 3D rendering is not supported in cloud environment.")
         st.image("assets/3d_placeholder.png", caption="3D view not available in cloud")
-
-
