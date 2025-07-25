@@ -1,6 +1,3 @@
-openpyxl
-scipy
-gradio
 streamlit
 pandas
 numpy
@@ -8,8 +5,11 @@ joblib
 scikit-learn
 matplotlib
 pyvista
+trimesh
 stpyvista
 streamlit-lottie
 torch
 torchvision
-trimesh
+gradio
+openpyxl
+scipy
