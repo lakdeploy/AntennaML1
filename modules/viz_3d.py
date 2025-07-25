@@ -10,18 +10,18 @@ def show_3d_model(path, height=400):
         return
 
     try:
-        # Use offscreen rendering to avoid X11/libXrender issues
-        pv.set_jupyter_backend('none')
+        # Force PyVista to off-screen mode
         pv.OFF_SCREEN = True
 
         mesh = pv.read(path)
-        plotter = pv.Plotter(off_screen=True, window_size=[400, 400])
-        plotter.add_mesh(mesh, color="lightblue", show_edges=True)
-        plotter.set_background("white")
+        plotter = pv.Plotter(off_screen=True, window_size=(400, 400))
+        plotter.add_mesh(mesh, color='lightblue', show_edges=True)
+        plotter.set_background('white')
 
         html_path = "assets/plot.html"
         plotter.export_html(html_path, backend='none', offline=True)
 
+        # Read and embed HTML
         with open(html_path, "r") as f:
             html_content = f.read()
 
